@@ -1,0 +1,122 @@
+@mixin triangle($t,$r,$b,$l){
+border-width:$t $r $b $l; 
+border-color:transparent;
+border-bottom-color:#e0c990;
+}
+
+@mixin center{
+position:absolute;
+top:0;
+right:0;
+bottom:0;
+left:0;
+margin:auto;
+}
+
+@mixin border-radius($radius:10px){
+-webkit-border-radius:$radius;
+-moz-border-radius:$radius;
+border-radius:$radius;
+}
+
+body{
+background:#4672bb;
+font-family:Arial;
+}
+
+.timepicker-container{
+width:300px;
+height:350px;
+background:black;
+@include center;
+@include border-radius;
+}
+
+.dial-container{
+width:100%;
+height:300px;
+background:#282828;
+@include border-radius;
+}
+
+.dials{
+width:20px;
+height:20px;
+border:1px solid #e0c990;
+border-radius:50%;
+position:absolute;
+left:0;
+top:0;
+color:#e0c990;
+}
+
+.mode-container{
+height:50px;
+width:100%;
+text-align:center;
+line-height:50px;
+font-size:27px;
+color:#6b6b6d;
+position:absolute;
+bottom:0px;
+}
+
+
+@mixin hands-style{
+@include center;display:block;width:0px;height:0px;border:1px solid #e0c990;transform-origin:bottom center;transition:all 1s;
+}
+
+/*setting initial time */
+#hour-mode-label:before{content:'1'};
+#minute-mode-label:before{content:'15';}
+
+.minute-hand{@include hands-style;transform:rotate(90deg);@include triangle(0px,1px,100px,1px);top:50px;bottom:initial;}
+
+.hour-hand{@include hands-style;top:initial;bottom:initial;@include triangle(0px,3px,60px,3px);top:90px;transform:none;transform:rotate(30deg);}
+
+.cen{display:block;@include center;top:145px;bottom:initial;width:10px;height:10px;background:#e0c990;@include border-radius(5px);}
+
+label[class*="dial"]{display:none;}
+
+
+/*mode switch behaviour*/
+
+input#hour-mode:checked{
+&~.mode-container label#hour-mode-label{color:#e0c990;}
+&~label[class*="dial-hour"]{display:block;}
+}
+
+input#minute-mode:checked{
+&~.mode-container label#minute-mode-label{color:#e0c990;}
+&~label[class*="dial-min"]{display:block;}
+}
+
+
+
+@for $i from 0 through 12{
+
+//positioning all the dials
+.dials.dial-min-#{$i},.dials.dial-hour-#{$i}{left:140px+130*cos($i*30*pi()/180-(pi()/2));top:140px+130*sin($i*30*pi()/180- (pi()/2));}
+
+//displaying numbers in dials
+.dials.dial-min-#{$i}:before,.dials.dial-hour-#{$i}:before{content:'#{$i*5}';display:block;font-size:12px;@include center;text-align:center;line-height:20px;}
+.dials.dial-hour-#{$i}:before{content:'#{$i}';}
+
+//hands behaviour on clicking on dials in minute mode
+#input-dial-min-#{$i}:checked{
+&~label.dial-min-#{$i}{background:#e0c990;color:black;}
+&~.minute-hand{transform:rotate($i*30deg);}
+&~.mode-container label#minute-mode-label:before{content:'#{$i*5}';}
+}
+
+//hands behaviour on clicking on dials in hour mode
+#input-dial-hour-#{$i}:checked{
+&~label.dial-hour-#{$i}{background:#e0c990;color:black;}
+&~.hour-hand{transform:rotate($i*30deg);}
+&~.mode-container label#hour-mode-label:before{content:'#{$i}';}
+}
+
+}
+
+input{visibility:hidden;}
+label{cursor:pointer;}
