@@ -190,7 +190,7 @@ input#minute-mode:checked {
   
   //displaying and styling numbers in dials
   .dials.dial-min-#{$i}:before,.dials.dial-hour-#{$i}:before {
-    content: #{$i * 5};
+    content: '#{$i * 5}';
     display: block;
     font-size: 12px;
     @include center;
@@ -200,7 +200,7 @@ input#minute-mode:checked {
   
   //displaying numbers in hour dials
   .dials.dial-hour-#{$i}:before {
-    content: #{$i};
+    content: '#{$i}';
   }
   
   //hands behaviour on clicking on dials in minute mode
@@ -213,7 +213,7 @@ input#minute-mode:checked {
       transform: rotate($i * 30deg);
     }
     & ~ .mode-container label#minute-mode-label:before {
-      content: "0#{$i * 5}";
+      content: '0#{$i * 5}';
     }
   }
   
@@ -227,7 +227,7 @@ input#minute-mode:checked {
       transform: rotate($i * 30deg);
     }
     & ~ .mode-container label#hour-mode-label:before {
-      content: "0#{$i}";
+      content: '0#{$i}';
     }
   }
 }
