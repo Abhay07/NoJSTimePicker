@@ -1,10 +1,10 @@
-/* line 22, ../sass/style.scss */
+/* line 26, ../sass/style.scss */
 body {
   background: #4672bb;
-  font-family: Arial;
+  font-family: Roboto;
 }
 
-/* line 27, ../sass/style.scss */
+/* line 32, ../sass/style.scss */
 .timepicker-container {
   width: 300px;
   height: 350px;
@@ -17,20 +17,22 @@ body {
   margin: auto;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 42, ../sass/style.scss */
 .dial-container {
   width: 100%;
   height: 300px;
   background: #282828;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
+  -moz-border-radius: 10px;
   border-radius: 10px;
 }
 
-/* line 42, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .dials {
   width: 20px;
   height: 20px;
@@ -42,7 +44,7 @@ body {
   color: #e0c990;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .mode-container {
   height: 50px;
   width: 100%;
@@ -54,18 +56,44 @@ body {
   bottom: 0px;
 }
 
-/*setting initial time */
-/* line 70, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
+.mode-container label:before {
+  display: inline-block;
+  width: 30px;
+  text-indent: -16px;
+  text-align: right;
+  overflow: hidden;
+  margin: auto;
+  margin: 0px 5px;
+}
+
+/* line 90, ../sass/style.scss */
+.separator {
+  position: relative;
+  top: -17px;
+}
+
+/* line 94, ../sass/style.scss */
 #hour-mode-label:before {
   content: '1';
 }
 
-/* line 71, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 #minute-mode-label:before {
   content: '15';
 }
 
-/* line 73, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
+input {
+  visibility: hidden;
+}
+
+/* line 101, ../sass/style.scss */
+label {
+  cursor: pointer;
+}
+
+/* line 104, ../sass/style.scss */
 .minute-hand {
   position: absolute;
   top: 0;
@@ -87,7 +115,7 @@ body {
   bottom: initial;
 }
 
-/* line 75, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .hour-hand {
   position: absolute;
   top: 0;
@@ -111,7 +139,7 @@ body {
   transform: rotate(30deg);
 }
 
-/* line 77, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 .cen {
   display: block;
   position: absolute;
@@ -127,40 +155,40 @@ body {
   background: #e0c990;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
 }
 
-/* line 79, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 label[class*="dial"] {
   display: none;
 }
 
-/*mode switch behaviour*/
-/* line 85, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 input#hour-mode:checked ~ .mode-container label#hour-mode-label {
   color: #e0c990;
 }
-/* line 86, ../sass/style.scss */
+/* line 119, ../sass/style.scss */
 input#hour-mode:checked ~ label[class*="dial-hour"] {
   display: block;
 }
 
-/* line 90, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 input#minute-mode:checked ~ .mode-container label#minute-mode-label {
   color: #e0c990;
 }
-/* line 91, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 input#minute-mode:checked ~ label[class*="dial-min"] {
   display: block;
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-0, .dials.dial-hour-0 {
   left: 140px;
   top: 10px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-0:before, .dials.dial-hour-0:before {
   content: "0";
   display: block;
@@ -175,46 +203,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-0:before {
   content: "0";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-0:checked ~ label.dial-min-0 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-0:checked ~ .minute-hand {
   transform: rotate(0deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-0:checked ~ .mode-container label#minute-mode-label:before {
-  content: "0";
+  content: "00";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-0:checked ~ label.dial-hour-0 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-0:checked ~ .hour-hand {
   transform: rotate(0deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-0:checked ~ .mode-container label#hour-mode-label:before {
-  content: "0";
+  content: "00";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-1, .dials.dial-hour-1 {
   left: 205px;
   top: 27.4167px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-1:before, .dials.dial-hour-1:before {
   content: "5";
   display: block;
@@ -229,46 +257,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-1:before {
   content: "1";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-1:checked ~ label.dial-min-1 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-1:checked ~ .minute-hand {
   transform: rotate(30deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-1:checked ~ .mode-container label#minute-mode-label:before {
-  content: "5";
+  content: "05";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-1:checked ~ label.dial-hour-1 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-1:checked ~ .hour-hand {
   transform: rotate(30deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-1:checked ~ .mode-container label#hour-mode-label:before {
-  content: "1";
+  content: "01";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-2, .dials.dial-hour-2 {
   left: 252.5833px;
   top: 75px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-2:before, .dials.dial-hour-2:before {
   content: "10";
   display: block;
@@ -283,46 +311,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-2:before {
   content: "2";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-2:checked ~ label.dial-min-2 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-2:checked ~ .minute-hand {
   transform: rotate(60deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-2:checked ~ .mode-container label#minute-mode-label:before {
-  content: "10";
+  content: "010";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-2:checked ~ label.dial-hour-2 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-2:checked ~ .hour-hand {
   transform: rotate(60deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-2:checked ~ .mode-container label#hour-mode-label:before {
-  content: "2";
+  content: "02";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-3, .dials.dial-hour-3 {
   left: 270px;
   top: 140px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-3:before, .dials.dial-hour-3:before {
   content: "15";
   display: block;
@@ -337,46 +365,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-3:before {
   content: "3";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-3:checked ~ label.dial-min-3 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-3:checked ~ .minute-hand {
   transform: rotate(90deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-3:checked ~ .mode-container label#minute-mode-label:before {
-  content: "15";
+  content: "015";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-3:checked ~ label.dial-hour-3 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-3:checked ~ .hour-hand {
   transform: rotate(90deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-3:checked ~ .mode-container label#hour-mode-label:before {
-  content: "3";
+  content: "03";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-4, .dials.dial-hour-4 {
   left: 252.5833px;
   top: 205.0px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-4:before, .dials.dial-hour-4:before {
   content: "20";
   display: block;
@@ -391,46 +419,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-4:before {
   content: "4";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-4:checked ~ label.dial-min-4 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-4:checked ~ .minute-hand {
   transform: rotate(120deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-4:checked ~ .mode-container label#minute-mode-label:before {
-  content: "20";
+  content: "020";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-4:checked ~ label.dial-hour-4 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-4:checked ~ .hour-hand {
   transform: rotate(120deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-4:checked ~ .mode-container label#hour-mode-label:before {
-  content: "4";
+  content: "04";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-5, .dials.dial-hour-5 {
   left: 205px;
   top: 252.5833px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-5:before, .dials.dial-hour-5:before {
   content: "25";
   display: block;
@@ -445,46 +473,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-5:before {
   content: "5";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-5:checked ~ label.dial-min-5 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-5:checked ~ .minute-hand {
   transform: rotate(150deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-5:checked ~ .mode-container label#minute-mode-label:before {
-  content: "25";
+  content: "025";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-5:checked ~ label.dial-hour-5 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-5:checked ~ .hour-hand {
   transform: rotate(150deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-5:checked ~ .mode-container label#hour-mode-label:before {
-  content: "5";
+  content: "05";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-6, .dials.dial-hour-6 {
   left: 140px;
   top: 270px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-6:before, .dials.dial-hour-6:before {
   content: "30";
   display: block;
@@ -499,46 +527,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-6:before {
   content: "6";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-6:checked ~ label.dial-min-6 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-6:checked ~ .minute-hand {
   transform: rotate(180deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-6:checked ~ .mode-container label#minute-mode-label:before {
-  content: "30";
+  content: "030";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-6:checked ~ label.dial-hour-6 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-6:checked ~ .hour-hand {
   transform: rotate(180deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-6:checked ~ .mode-container label#hour-mode-label:before {
-  content: "6";
+  content: "06";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-7, .dials.dial-hour-7 {
   left: 75.0px;
   top: 252.5833px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-7:before, .dials.dial-hour-7:before {
   content: "35";
   display: block;
@@ -553,46 +581,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-7:before {
   content: "7";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-7:checked ~ label.dial-min-7 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-7:checked ~ .minute-hand {
   transform: rotate(210deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-7:checked ~ .mode-container label#minute-mode-label:before {
-  content: "35";
+  content: "035";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-7:checked ~ label.dial-hour-7 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-7:checked ~ .hour-hand {
   transform: rotate(210deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-7:checked ~ .mode-container label#hour-mode-label:before {
-  content: "7";
+  content: "07";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-8, .dials.dial-hour-8 {
   left: 27.4167px;
   top: 205.0px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-8:before, .dials.dial-hour-8:before {
   content: "40";
   display: block;
@@ -607,46 +635,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-8:before {
   content: "8";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-8:checked ~ label.dial-min-8 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-8:checked ~ .minute-hand {
   transform: rotate(240deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-8:checked ~ .mode-container label#minute-mode-label:before {
-  content: "40";
+  content: "040";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-8:checked ~ label.dial-hour-8 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-8:checked ~ .hour-hand {
   transform: rotate(240deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-8:checked ~ .mode-container label#hour-mode-label:before {
-  content: "8";
+  content: "08";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-9, .dials.dial-hour-9 {
   left: 10px;
   top: 140.0px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-9:before, .dials.dial-hour-9:before {
   content: "45";
   display: block;
@@ -661,46 +689,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-9:before {
   content: "9";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-9:checked ~ label.dial-min-9 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-9:checked ~ .minute-hand {
   transform: rotate(270deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-9:checked ~ .mode-container label#minute-mode-label:before {
-  content: "45";
+  content: "045";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-9:checked ~ label.dial-hour-9 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-9:checked ~ .hour-hand {
   transform: rotate(270deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-9:checked ~ .mode-container label#hour-mode-label:before {
-  content: "9";
+  content: "09";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-10, .dials.dial-hour-10 {
   left: 27.4167px;
   top: 75.0px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-10:before, .dials.dial-hour-10:before {
   content: "50";
   display: block;
@@ -715,46 +743,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-10:before {
   content: "10";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-10:checked ~ label.dial-min-10 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-10:checked ~ .minute-hand {
   transform: rotate(300deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-10:checked ~ .mode-container label#minute-mode-label:before {
-  content: "50";
+  content: "050";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-10:checked ~ label.dial-hour-10 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-10:checked ~ .hour-hand {
   transform: rotate(300deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-10:checked ~ .mode-container label#hour-mode-label:before {
-  content: "10";
+  content: "010";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-11, .dials.dial-hour-11 {
   left: 75.0px;
   top: 27.4167px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-11:before, .dials.dial-hour-11:before {
   content: "55";
   display: block;
@@ -769,46 +797,46 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-11:before {
   content: "11";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-11:checked ~ label.dial-min-11 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-11:checked ~ .minute-hand {
   transform: rotate(330deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-11:checked ~ .mode-container label#minute-mode-label:before {
-  content: "55";
+  content: "055";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-11:checked ~ label.dial-hour-11 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-11:checked ~ .hour-hand {
   transform: rotate(330deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-11:checked ~ .mode-container label#hour-mode-label:before {
-  content: "11";
+  content: "011";
 }
 
-/* line 99, ../sass/style.scss */
+/* line 135, ../sass/style.scss */
 .dials.dial-min-12, .dials.dial-hour-12 {
   left: 140.0px;
   top: 10px;
 }
 
-/* line 102, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 .dials.dial-min-12:before, .dials.dial-hour-12:before {
   content: "60";
   display: block;
@@ -823,45 +851,35 @@ input#minute-mode:checked ~ label[class*="dial-min"] {
   line-height: 20px;
 }
 
-/* line 103, ../sass/style.scss */
+/* line 139, ../sass/style.scss */
 .dials.dial-hour-12:before {
   content: "12";
 }
 
-/* line 107, ../sass/style.scss */
+/* line 143, ../sass/style.scss */
 #input-dial-min-12:checked ~ label.dial-min-12 {
   background: #e0c990;
   color: black;
 }
-/* line 108, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 #input-dial-min-12:checked ~ .minute-hand {
   transform: rotate(360deg);
 }
-/* line 109, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 #input-dial-min-12:checked ~ .mode-container label#minute-mode-label:before {
-  content: "60";
+  content: "060";
 }
 
-/* line 114, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 #input-dial-hour-12:checked ~ label.dial-hour-12 {
   background: #e0c990;
   color: black;
 }
-/* line 115, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 #input-dial-hour-12:checked ~ .hour-hand {
   transform: rotate(360deg);
 }
-/* line 116, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #input-dial-hour-12:checked ~ .mode-container label#hour-mode-label:before {
-  content: "12";
-}
-
-/* line 121, ../sass/style.scss */
-input {
-  visibility: hidden;
-}
-
-/* line 122, ../sass/style.scss */
-label {
-  cursor: pointer;
+  content: "012";
 }
