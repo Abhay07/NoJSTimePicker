@@ -1,5 +1,5 @@
 # NoJSTimePicker
 This was an interview task. A clock was to be made without using javascript.
 
-### Where to see ?
+### Demo
 http://abhay07.github.io/NoJSTimePicker/
